@@ -4,6 +4,7 @@
   "description": "自己动手写Java虚拟机的Typescript版本",
   "main": "index.js",
   "scripts": {
+    "dev": "esno src/index.ts",
     "lint": "eslint --cache --ext .ts ./{src,__tests__}/**.ts",
     "lint:fix": "eslint --cache --fix --ext .ts ./{src,__tests__}/**.ts",
     "format": "prettier --write --cache --parser typescript \"**/*.[tj]s?(x)\"",
@@ -19,11 +20,13 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.1",
+    "@types/adm-zip": "^0.5.0",
     "@types/node": "^20.2.6",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
+    "esno": "^0.16.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
@@ -36,5 +39,8 @@
   "lint-staged": {
     "*.{ts,json}": "prettier -w",
     "*.ts": "eslint --fix"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10"
   }
 }
