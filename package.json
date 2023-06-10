@@ -15,7 +15,7 @@
     "ts-jvm"
   ],
   "author": "yeyunjianshi",
-  "license": "MITh",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-terser": "^0.4.3",
