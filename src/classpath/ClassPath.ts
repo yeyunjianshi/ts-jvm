@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { Entry, WildcardEntry, createEntry } from './entry'
+import { Entry, WildcardEntry, createEntry } from './Entry'
 import { isDirectory } from 'src/utils'
 
 export class ClassPath {
