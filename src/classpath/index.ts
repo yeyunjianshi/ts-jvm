@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { Entry, WildcardEntry, createEntry } from './entry'
 import { isDirectory } from 'src/utils'
 
-export class Classpath {
+export class ClassPath {
   bootClasspath!: Entry
   extClasspath!: Entry
   userClasspath!: Entry
