@@ -11,3 +11,5 @@ export const isJarOrZipPath = (path: string) =>
   path.endsWith('.JAR') ||
   path.endsWith('.zip') ||
   path.endsWith('.ZIP')
+
+export const lastElement = <T>(arr: T[]) => arr[arr.length - 1]
