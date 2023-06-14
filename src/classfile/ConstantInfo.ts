@@ -26,7 +26,7 @@ export function createConstantInfo(
   reader: ClassReader,
   cp: ConstantPool
 ): ConstantInfo {
-  const tag = reader.readUint8()
+  const tag = reader.readUInt8()
   const info = createConstantInfoByTag(tag, cp)
   info.readInfo(reader)
   return info
@@ -208,7 +208,7 @@ export class ConstantMethodHandleInfo implements ConstantInfo {
   referenceIndex: UInt16 = 0
 
   readInfo(reader: ClassReader): void {
-    this.referenceKind = reader.readUint8()
+    this.referenceKind = reader.readUInt8()
     this.referenceIndex = reader.readUInt16()
   }
 }

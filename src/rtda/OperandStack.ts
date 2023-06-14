@@ -9,7 +9,7 @@ export class OperandStack {
     this.maxSize = maxSize <= 0 ? Number.MAX_SAFE_INTEGER : maxSize
   }
 
-  push(val: Int32 | Int64 | Float | Double | JObject | null) {
+  push(val: Int32 | Int64 | Float | Double | JObject | Slot | null) {
     if (this.slots.length > this.maxSize) {
       throw new Error(`java.lang.IndexOutOfBounds: push operand stack`)
     }
@@ -41,5 +41,9 @@ export class OperandStack {
 
   popRef() {
     return this.pop() as Nullable<JObject>
+  }
+
+  popSlot() {
+    return this.pop() as Slot
   }
 }

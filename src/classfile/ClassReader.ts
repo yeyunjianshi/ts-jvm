@@ -1,6 +1,6 @@
-export class ClassReader {
-  private _offset = 0
-  private _buffer: Buffer
+export class Reader {
+  protected _offset = 0
+  protected _buffer: Buffer
 
   constructor(buffer: Buffer) {
     this._buffer = buffer
@@ -12,7 +12,7 @@ export class ClassReader {
     return val
   }
 
-  readUint8() {
+  readUInt8() {
     const val = this._buffer.readUInt8(this._offset)
     this._offset++
     return val
@@ -71,7 +71,14 @@ export class ClassReader {
     return Array.from({ length: len }, () => this.readUInt16())
   }
 
+  readInt32s(len: number | undefined): UInt32[] {
+    if (len === undefined) len = this.readUInt16()
+    return Array.from({ length: len }, () => this.readInt32())
+  }
+
   readBytes(len: UInt32): UInt8[] {
-    return Array.from({ length: len }, () => this.readUint8())
+    return Array.from({ length: len }, () => this.readUInt8())
   }
 }
+
+export class ClassReader extends Reader {}

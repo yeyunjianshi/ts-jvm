@@ -40,7 +40,7 @@ async function testLocalVarsAndOperandStack() {
   console.log(vars.getDouble(7))
   console.log(vars.getRef(9))
 
-  const ops = frame.operatorStack
+  const ops = frame.operandStack
 
   ops.push(100)
   ops.push(-100)
